@@ -20,7 +20,7 @@ import {filterImageFromURL, deleteLocalFiles, validateImageUrl} from './util/uti
       console.log("image from url: " + imageUrl)
       filterImageFromURL(imageUrl).then(filteredpath => {
         console.log("filteredpath: " + filteredpath)
-        res.sendFile(filteredpath, function (err) {
+        res.sendFile(filteredpath, function (evt) {
           deleteLocalFiles([filteredpath])
         })
       })
